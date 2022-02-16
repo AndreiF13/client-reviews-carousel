@@ -25,10 +25,10 @@ window.addEventListener('DOMContentLoaded', () => {
         freeModeFluid: true,
         speed: 3000,
         // grabCursor: true,
-        // autoplay: true,
+        autoplay: true,
         // autoplayDisableOnInteraction: false,
-        // autoplay: {
-        //     delay: 3000,
-        // },
+        autoplay: {
+            delay: 3000,
+        },
     });
 });

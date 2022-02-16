@@ -48,11 +48,11 @@ if ( ! class_exists( 'Client_Reviews_Carousel_Shortcode' ) ) {
                                     <img class="quote1" src="<?php echo plugins_url( '/images/quote-layer-1.png', __FILE__ ) ?>" alt="quote inactive">
                                     <img class="quote2" src="<?php echo plugins_url( '/images/quote-layer-2.png', __FILE__ ) ?>" alt="quote active">
                                 </div>
-                            <div class="as-profile as-bg"> 
                                     <?php if ( has_post_thumbnail() ) : ?> 
-                                        <?php the_post_thumbnail(''); ?> 
+                                        <div class="as-profile as-bg"> 
+                                            <?php the_post_thumbnail(''); ?> 
+                                        </div>
                                     <?php endif; ?>
-                            </div>
                             <h6> <?php the_title(); ?> </h6>
                         </div> 
 
