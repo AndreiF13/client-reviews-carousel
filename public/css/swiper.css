@@ -579,3 +579,125 @@ button.swiper-pagination-bullet {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden
 }
+.swiper-container {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+  .swiper-slide-active {
+    transform: scale(1.1);
+  }
+  .swiper-slide-active .as-head {
+    background-color: #1c75bc !important;
+  }
+  .swiper-slide-active .as-head strong,
+  .swiper-slide-active .as-head span,
+  .swiper-slide-active .as-head em,
+  .swiper-slide-active .as-head p {
+    color: #fff !important;
+  }
+  .swiper-slide-active .card .as-head .quote1 {
+    display: none;
+  }
+  .swiper-slide-active .card .as-head .quote2 {
+    display: block;
+  }
+  .swiper-slide-active .as-head::after {
+    content: " ";
+    position: absolute;
+    left: 45%;
+    bottom: -15px;
+    border-top: 15px solid #1c75bc;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: none;
+  }
+  strong {
+    font-weight: bolder;
+  }
+  .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word; 
+    background-clip: border-box;
+    border: none !important;
+    background: transparent !important;
+    border-radius: .25rem;
+  }
+  .card .as-head {
+    width: 100%;
+    height: 440px;
+    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: left;
+    position: relative;
+    border-radius: 23px;
+    padding: 25px;
+}
+.card .as-head * {
+    font-size: 13px;
+    width: 80%;
+    margin-left: auto;
+    color: #484848;
+}
+
+.card .as-head .quote1 {
+    position: absolute;
+    width: 50px;
+    top: 30px;
+    left: 20px;
+    display: block;
+}
+
+.card .as-head .quote2 {
+    position: absolute;
+    width: 50px;
+    top: 30px;
+    left: 20px;
+    display: none;
+}
+ .card .as-head::after {
+    content: " ";
+    position: absolute;
+    left: 45%;
+    bottom: -15px;
+    border-top: 15px solid #e5e5e5;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: none;
+  }
+  .swiper-slide-active .card .as-head::after {
+    border-top: 15px solid #1c75bc;
+  }
+.card .as-profile {
+    width: 75px;
+    height: 75px;
+    margin: 25px auto;
+    border-radius: 100%;
+  }
+  .card .as-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card .as-profile.as-bg img {
+    border-radius: 100%;
+  }
+  .card h6 {
+    font-weight: 800;
+    color: #484848;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media only screen and (max-width: 767px) {
+   .swiper-slide-active {
+        transform: unset !important;
+    }
+}

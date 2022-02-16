@@ -72,7 +72,6 @@ class client_reviews_carousel_Public {
 		 * class.
 		 */
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/swiper.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, 'all' );
 
 	}
 
@@ -94,8 +93,7 @@ class client_reviews_carousel_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/swiper.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/scrips.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script( 'swiper', plugin_dir_url( __FILE__ ) . 'js/swiper.js', array( 'jquery' ), '6.7.0', true );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/scripts.js', array( 'jquery', 'swiper' ), $this->version, false );
 	}
 }

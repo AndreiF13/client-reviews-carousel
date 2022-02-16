@@ -26,31 +26,58 @@ if ( ! class_exists( 'Client_Reviews_Carousel_Shortcode' ) ) {
                 'orderby'			  => 'menu_order',
                 'order' 			  => 'ASC'
            ));  
-           if ($testimonials->have_posts()) :
-           while ( $testimonials->have_posts() ) : $testimonials->the_post(); 
-           $company = get_post_meta( get_the_ID(), 'client_reviews_carousel_company', true );
-            ?> 
-            <div class="testimonials-carousel swiper-slide"> 
-                   <div class="card"> 
-                        <div class="as-head">
-                            <?php the_content(); ?>  
-                        </div>
-                       <div class="as-profile as-bg"> 
-                               <?php if ( has_post_thumbnail() ) : ?> 
-                                   <?php the_post_thumbnail(''); ?> 
-                               <?php endif; ?>
-                       </div>
-                       <h6> <?php the_title(); ?> </h6> 
-                       <div class="text">
-                               <br>
-                               <strong><?php echo $company; ?></strong>
-                       </div>
-                   </div> 
+            if ($testimonials->have_posts()) :
+            ?>
+            <script>
+
+            // swiper.slideNext();
+            </script>
+            <div class="swiper-container">
+
+                <div class="swiper-wrapper">
+
+                    <?php 
+                        while ( $testimonials->have_posts() ) : $testimonials->the_post(); 
+                        $company = get_post_meta( get_the_ID(), 'client_reviews_carousel_company', true );
+                    ?> 
+                    <div class="testimonial swiper-slide"> 
+
+                        <div class="card"> 
+                                <div class="as-head">
+                                    <?php the_content(); ?>
+                                    <img class="quote1" src="<?php echo plugins_url( '/images/quote-layer-1.png', __FILE__ ) ?>" alt="quote inactive">
+                                    <img class="quote2" src="<?php echo plugins_url( '/images/quote-layer-2.png', __FILE__ ) ?>" alt="quote active">
+                                </div>
+                            <div class="as-profile as-bg"> 
+                                    <?php if ( has_post_thumbnail() ) : ?> 
+                                        <?php the_post_thumbnail(''); ?> 
+                                    <?php endif; ?>
+                            </div>
+                            <h6> <?php the_title(); ?> </h6>
+                        </div> 
+
+                    </div>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                        endif;
+                    ?>
+
+                </div>
+
+                <!-- If we need pagination -->
+                <!-- <div class="swiper-pagination"></div> -->
+
+                <!-- If we need navigation buttons -->
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
+
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+
             </div>
-           <?php
-            endwhile;
-            wp_reset_postdata();
-            endif;
+
+            <?php 
         }
 
         /**
